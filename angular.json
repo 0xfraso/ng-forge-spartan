@@ -61,13 +61,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "dashboard-angular:build:production"
+              "buildTarget": "gorillastudio:build:production"
             },
             "development": {
-              "buildTarget": "dashboard-angular:build:development"
-            },
-            "development": {
-              "buildTarget": "dashboard-angular:build:development"
+              "buildTarget": "gorillastudio:build:development"
             }
           },
           "defaultConfiguration": "development"

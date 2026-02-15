@@ -1,23 +1,5 @@
 # ng-forge-spartan Project
 
-## ng-forge Documentation Subtree
-
-The `docs/ng-forge` directory contains the ng-forge source code as a git subtree for reference.
-
-**Subtree remote**: https://github.com/ng-forge/ng-forge
-
-### Updating the subtree
-
-```bash
-git subtree pull --prefix docs/ng-forge https://github.com/ng-forge/ng-forge main --squash
-```
-
-### Key References
-
-- Custom integrations: `docs/ng-forge/packages/dynamic-forms-material/` (reference implementation)
-- Integration API: `docs/ng-forge/packages/dynamic-forms/integration/`
-- Core types: `@ng-forge/dynamic-forms`
-
 ## ng-forge-spartan Library
 
 **Full Documentation**: `README.md`
@@ -90,6 +72,12 @@ apps/example/                        # Example app demonstrating library usage
 @hlm/form-field, @hlm/input, @hlm/textarea, @hlm/checkbox, @hlm/switch,
 @hlm/select, @hlm/radio-group, @hlm/slider, @hlm/date-picker, @hlm/label
 ```
+
+### External References
+
+- **ng-forge**: https://github.com/ng-forge/ng-forge
+- **ng-forge Reference Integration**: https://github.com/ng-forge/ng-forge/tree/main/packages/dynamic-forms-material
+- **ng-forge Integration API**: https://github.com/ng-forge/ng-forge/tree/main/packages/dynamic-forms/integration
 
 ## Build Commands
 

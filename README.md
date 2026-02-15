@@ -567,9 +567,8 @@ Path aliases configured in `tsconfig.json`:
 ## References
 
 - **ng-forge**: https://github.com/ng-forge/ng-forge
-- **ng-forge Documentation**: `docs/ng-forge/`
-- **Reference Integration**: `docs/ng-forge/packages/dynamic-forms-material/`
-- **Integration API**: `docs/ng-forge/packages/dynamic-forms/integration/`
+- **ng-forge Docs**: https://github.com/ng-forge/ng-forge/tree/main/packages/dynamic-forms
+- **Reference Integration**: https://github.com/ng-forge/ng-forge/tree/main/packages/dynamic-forms-material
 - **Spartan UI**: https://spartan.ng/
 - **Spartan NG GitHub**: https://github.com/spartan-ng/spartan
 - **Angular Signal Forms**: https://angular.dev/guide/forms/signals

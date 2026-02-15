@@ -18,13 +18,43 @@ git subtree pull --prefix docs/ng-forge https://github.com/ng-forge/ng-forge mai
 - Integration API: `docs/ng-forge/packages/dynamic-forms/integration/`
 - Core types: `@ng-forge/dynamic-forms`
 
-## Dynamic Forms Spartan Integration
+## ng-forge-spartan Library
 
 **Full Documentation**: `README.md`
 
-Location: `src/app/shared/dynamic-forms-spartan/`
+The main library providing ng-forge field components using Spartan UI (hlm-* components).
 
-Provides ng-forge field components using Spartan UI (hlm-* components).
+### Structure
+
+```
+libs/ng-forge-spartan/
+├── src/
+│   ├── index.ts                    # Public API exports
+│   └── lib/
+│       ├── with-spartan-fields.ts  # Provider registration + module augmentation
+│       └── fields/
+│           ├── input/
+│           │   ├── hlm-input.type.ts
+│           │   └── hlm-input.component.ts
+│           ├── textarea/
+│           ├── checkbox/
+│           ├── toggle/
+│           ├── select/
+│           ├── radio/
+│           ├── slider/
+│           ├── datepicker/
+│           └── button/
+├── package.json                    # npm package metadata (name: ng-forge-spartan)
+├── ng-package.json                 # ng-packagr configuration
+└── tsconfig.*.json                 # TypeScript configuration
+
+apps/example/                        # Example app demonstrating library usage
+├── src/
+│   ├── main.ts
+│   ├── app/
+│   └── styles.css
+└── project.json
+```
 
 ### Supported Field Types
 
@@ -50,9 +80,9 @@ Provides ng-forge field components using Spartan UI (hlm-* components).
 
 1. Create type definition in `fields/{type}/hlm-{type}.type.ts`
 2. Create component in `fields/{type}/hlm-{type}.component.ts`
-3. Register in `with-spartan-fields.ts`
-4. Augment `FieldRegistryLeaves` in `with-spartan-fields.ts`
-5. Export from `index.ts`
+3. Register in `lib/with-spartan-fields.ts`
+4. Augment `FieldRegistryLeaves` in `lib/with-spartan-fields.ts`
+5. Export from `lib/index.ts` and `src/index.ts`
 
 ### Import Aliases (tsconfig.json)
 
@@ -64,7 +94,8 @@ Provides ng-forge field components using Spartan UI (hlm-* components).
 ## Build Commands
 
 ```bash
-npm run build    # Production build
-npm run start    # Dev server
-npm run test     # Run tests
+npm run build:lib      # Build library for npm publishing
+npm run start:example  # Run example app dev server
+npm run build:example  # Build example app
+npm run test           # Run tests
 ```

@@ -1,0 +1,32 @@
+{
+  "name": "ng-forge-spartan",
+  "version": "0.1.0",
+  "description": "Spartan UI integration for ng-forge dynamic forms. Provides hlm-* field components with full type safety.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "dynamic-forms",
+    "form-builder",
+    "spartan-ui",
+    "hlm",
+    "ng-forge",
+    "signal-forms"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@angular/common": "~21.1.0",
+    "@angular/core": "~21.1.0",
+    "@angular/forms": "~21.1.0",
+    "@ng-forge/dynamic-forms": "~0.5.0",
+    "@spartan-ng/brain": "^0.0.1-alpha.635"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ng-forge/ng-forge-spartan.git",
+    "directory": "libs/ng-forge-spartan"
+  }
+}

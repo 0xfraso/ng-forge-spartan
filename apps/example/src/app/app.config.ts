@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideServiceWorker } from '@angular/service-worker';
 import { provideDynamicForm } from '@ng-forge/dynamic-forms';
-import { withSpartanFields } from './shared/dynamic-forms-spartan';
+import { withSpartanFields } from 'ng-forge-spartan';
 
 export const appConfig: ApplicationConfig = {
   providers: [

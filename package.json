@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:example": "ng serve example",
+    "build:lib": "ng build ng-forge-spartan",
+    "build:example": "ng build example",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

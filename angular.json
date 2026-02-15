@@ -6,26 +6,46 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "gorillastudio": {
+    "ng-forge-spartan": {
+      "projectType": "library",
+      "root": "libs/ng-forge-spartan",
+      "sourceRoot": "libs/ng-forge-spartan/src",
+      "prefix": "df-spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "libs/ng-forge-spartan/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng-forge-spartan/tsconfig.lib.prod.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    },
+    "example": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/example",
+      "sourceRoot": "apps/example/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
-            "tsConfig": "tsconfig.app.json",
+            "browser": "apps/example/src/main.ts",
+            "tsConfig": "apps/example/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "apps/example/public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "apps/example/src/styles.css"
             ]
           },
           "configurations": {
@@ -43,7 +63,7 @@
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "apps/example/ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -61,10 +81,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "gorillastudio:build:production"
+              "buildTarget": "example:build:production"
             },
             "development": {
-              "buildTarget": "gorillastudio:build:development"
+              "buildTarget": "example:build:development"
             }
           },
           "defaultConfiguration": "development"

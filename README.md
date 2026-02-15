@@ -1,17 +1,23 @@
-# ng-forge Dynamic Forms Spartan Integration
+# ng-forge Spartan
 
-A custom ng-forge dynamic forms integration using Spartan UI (helm/hlm-*) components.
+Spartan UI integration for ng-forge dynamic forms. Provides hlm-* field components with full type safety.
 
 ## Overview
 
-This integration bridges ng-forge's configuration-driven dynamic forms with Spartan UI components. It supports Angular Signal Forms for reactive state management with full type safety.
+This library bridges ng-forge's configuration-driven dynamic forms with Spartan UI components. It supports Angular Signal Forms for reactive state management with full type safety.
+
+## Installation
+
+```bash
+npm install ng-forge-spartan
+```
 
 ## Quick Start
 
 ```typescript
 // app.config.ts
 import { provideDynamicForm } from '@ng-forge/dynamic-forms';
-import { withSpartanFields } from './shared/dynamic-forms-spartan';
+import { withSpartanFields } from 'ng-forge-spartan';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -568,25 +574,6 @@ Path aliases configured in `tsconfig.json`:
 
 ---
 
-## Development Server
+## License
 
-```bash
-npm run start
-```
-
-Navigate to `http://localhost:4302/`. The application will automatically reload on file changes.
-
-## Build
-
-```bash
-npm run build
-```
-
-Build artifacts are stored in `dist/`.
-
-## Testing
-
-```bash
-npm run test    # Unit tests with Vitest
-npm run e2e     # End-to-end tests
-```
+MIT

@@ -185,7 +185,10 @@
         "./libs/ui/utils/src/index.ts"
       ],
       "@ng-forge-spartan/dynamic-forms-spartan": [
-        "./libs/dynamic-forms-spartan/src/index.ts"
+        "./libs/ng-forge-spartan/src/index.ts"
+      ],
+      "ng-forge-spartan": [
+        "./libs/ng-forge-spartan/src/index.ts"
       ]
     }
   },

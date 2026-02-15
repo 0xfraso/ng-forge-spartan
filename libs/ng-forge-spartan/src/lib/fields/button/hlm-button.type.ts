@@ -1,4 +1,4 @@
-import { ButtonField, EventArgs } from '@ng-forge/dynamic-forms/integration';
+import { ButtonField } from '@ng-forge/dynamic-forms/integration';
 import {
   AppendArrayItemEvent,
   ArrayAllowedChildren,
@@ -11,6 +11,7 @@ import {
   PreviousPageEvent,
   RemoveAtIndexEvent,
   ShiftArrayItemEvent,
+  SubmitEvent,
 } from '@ng-forge/dynamic-forms';
 
 export interface HlmButtonProps {

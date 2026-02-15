@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./out-tsc/lib",
+    "target": "ES2022",
+    "module": "ES2022",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "lib": ["ES2022"],
+    "moduleResolution": "bundler",
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictPropertyInitialization": false,
+    "strictFunctionTypes": false
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/test.ts", "**/*.spec.ts", "**/*.type-test.ts"]
+}

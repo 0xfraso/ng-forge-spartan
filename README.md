@@ -2,15 +2,32 @@
 
 Spartan UI integration for ng-forge dynamic forms. Provides hlm-* field components with full type safety.
 
+> **Note:** This is a monorepo library, not a published npm package. The Spartan UI components (`@hlm/*`) are generated locally and cannot be published as standalone packages.
+
 ## Overview
 
 This library bridges ng-forge's configuration-driven dynamic forms with Spartan UI components. It supports Angular Signal Forms for reactive state management with full type safety.
 
-## Installation
+## Setup
+
+### Option 1: Clone This Repository
 
 ```bash
-npm install ng-forge-spartan
+git clone https://github.com/0xfraso/ng-forge-spartan.git
+cd ng-forge-spartan
+pnpm install
 ```
+
+### Option 2: Copy Library to Your Project
+
+Copy the `libs/ng-forge-spartan` directory to your project's `libs/` folder.
+
+### Requirements
+
+Your project must have:
+- **@ng-forge/dynamic-forms** installed
+- **Spartan UI** components generated via `@spartan-ng/cli`
+- Path aliases configured in `tsconfig.json` for `@hlm/*` imports
 
 ## Quick Start
 
@@ -50,21 +67,27 @@ export class MyComponent {}
 ### Directory Structure
 
 ```
-src/app/shared/dynamic-forms-spartan/
-├── index.ts                    # Barrel exports
-├── with-spartan-fields.ts      # Provider registration + module augmentation
-└── fields/
-    ├── input/
-    │   ├── hlm-input.type.ts       # Type definitions
-    │   └── hlm-input.component.ts  # Component implementation
-    ├── textarea/
-    ├── checkbox/
-    ├── toggle/
-    ├── select/
-    ├── radio/
-    ├── slider/
-    └── datepicker/
+libs/ng-forge-spartan/
+├── src/
+│   ├── index.ts                    # Public API exports
+│   └── lib/
+│       ├── with-spartan-fields.ts  # Provider registration + module augmentation
+│       └── fields/
+│           ├── input/
+│           │   ├── hlm-input.type.ts       # Type definitions
+│           │   └── hlm-input.component.ts  # Component implementation
+│           ├── textarea/
+│           ├── checkbox/
+│           ├── toggle/
+│           ├── select/
+│           ├── radio/
+│           ├── slider/
+│           └── datepicker/
 ```
+
+### Why Not an npm Package?
+
+Spartan UI components are generated **locally** in your project via the CLI. The `@hlm/*` components are styled variants of `@spartan-ng/brain` components and are not published as npm packages. This library requires those local components to function.
 
 ### Key Files
 
@@ -470,7 +493,7 @@ readonly resolvedErrors = createResolvedErrorsSignal(
 
 readonly showErrors = shouldShowErrors(this.field);
 
-readonly errorsToDisplay = computed(() => 
+readonly errorsToDisplay = computed(() =>
   this.showErrors() ? this.resolvedErrors() : []
 );
 ```
@@ -531,15 +554,17 @@ Path aliases configured in `tsconfig.json`:
 
 ## Known Limitations
 
-1. **Spartan + Signal Forms**: Spartan components use NgControl (reactive forms), not Angular Signal Forms. The `[formField]` directive bridges this gap for compatible components.
+1. **Not an npm package**: This library requires local Spartan UI components and cannot be published to npm.
 
-2. **hlm-form-field Compatibility**: Only works with components implementing `BrnFormFieldControl`:
+2. **Spartan + Signal Forms**: Spartan components use NgControl (reactive forms), not Angular Signal Forms. The `[formField]` directive bridges this gap for compatible components.
+
+3. **hlm-form-field Compatibility**: Only works with components implementing `BrnFormFieldControl`:
    - Compatible: `brn-select`, native inputs with hlmInput
    - Not compatible: `hlm-checkbox`, `hlm-switch`, `hlm-radio-group`, `hlm-slider`, `hlm-date-picker`
 
-3. **Readonly Handling**: Native controls require manual DOM manipulation for readonly attribute (see input/textarea components).
+4. **Readonly Handling**: Native controls require manual DOM manipulation for readonly attribute (see input/textarea components).
 
-4. **Date Handling**: Datepicker uses manual value sync with `Date` object conversion for string values.
+5. **Date Handling**: Datepicker uses manual value sync with `Date` object conversion for string values.
 
 ---
 

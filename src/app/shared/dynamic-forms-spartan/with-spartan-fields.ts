@@ -4,6 +4,7 @@ import {
   checkboxFieldMapper,
   optionsFieldMapper,
   datepickerFieldMapper,
+  submitButtonFieldMapper,
 } from '@ng-forge/dynamic-forms/integration';
 
 export function withSpartanFields(): FieldTypeDefinition[] {
@@ -50,6 +51,11 @@ export function withSpartanFields(): FieldTypeDefinition[] {
       loadComponent: () => import('./fields/datepicker/hlm-datepicker.component'),
       mapper: datepickerFieldMapper,
     },
+    {
+      name: 'submit',
+      loadComponent: () => import('./fields/button/hlm-button.component'),
+      mapper: submitButtonFieldMapper,
+    },
   ];
 }
 
@@ -63,5 +69,6 @@ declare module '@ng-forge/dynamic-forms' {
     radio: import('./fields/radio/hlm-radio.type').HlmRadioField<unknown>;
     slider: import('./fields/slider/hlm-slider.type').HlmSliderField;
     datepicker: import('./fields/datepicker/hlm-datepicker.type').HlmDatepickerField;
+    submit: import('./fields/button/hlm-button.type').HlmSubmitButtonField;
   }
 }

@@ -6,4 +6,5 @@ export * from './fields/select/hlm-select.type';
 export * from './fields/radio/hlm-radio.type';
 export * from './fields/slider/hlm-slider.type';
 export * from './fields/datepicker/hlm-datepicker.type';
+export * from './fields/button/hlm-button.type';
 export * from './with-spartan-fields';

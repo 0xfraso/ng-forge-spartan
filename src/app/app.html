@@ -1,15 +1,17 @@
 <main class="main">
   <h1>ng-forge + Spartan UI</h1>
-  
+
   <div class="form-section">
     <h2>Dynamic Form Test</h2>
-    <form [dynamic-form]="formConfig" [(value)]="formValue" class="test-form"></form>
-    
-    <div class="form-output">
-      <h3>Form Value</h3>
-      <pre>{{ formValue() | json }}</pre>
+    <div class="demo-grid">
+      <form [dynamic-form]="formConfig" [(value)]="formValue" class="test-form"></form>
+
+      <div class="form-output">
+        <h3>Form State</h3>
+        <pre>{{ displayData() | json }}</pre>
+      </div>
     </div>
   </div>
-  
+
   <router-outlet />
 </main>

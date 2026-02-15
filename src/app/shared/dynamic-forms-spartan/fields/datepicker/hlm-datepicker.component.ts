@@ -93,7 +93,7 @@ export default class HlmDatepickerFieldComponent implements HlmDatepickerCompone
   protected _onDateChange(value: Date | null): void {
     if (value !== null) {
       this._selectedDate.set(value);
-      this.field()().value.set(value);
+      this.field()().value.set(value.toISOString());
     }
   }
 

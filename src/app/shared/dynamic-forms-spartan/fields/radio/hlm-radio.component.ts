@@ -1,11 +1,29 @@
-import { ChangeDetectionStrategy, Component, computed, effect, ElementRef, inject, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  ElementRef,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { FieldTree } from '@angular/forms/signals';
 import { HlmLabel } from '@hlm/label';
 import { HlmRadioGroupImports } from '@hlm/radio-group';
 import { BrnRadioGroupImports } from '@spartan-ng/brain/radio-group';
-import { DynamicText, DynamicTextPipe, ValidationMessages, ValueType } from '@ng-forge/dynamic-forms';
+import {
+  DynamicText,
+  DynamicTextPipe,
+  ValidationMessages,
+  ValueType,
+} from '@ng-forge/dynamic-forms';
 import { FieldMeta, FieldOption } from '@ng-forge/dynamic-forms';
-import { createResolvedErrorsSignal, setupMetaTracking, shouldShowErrors } from '@ng-forge/dynamic-forms/integration';
+import {
+  createResolvedErrorsSignal,
+  setupMetaTracking,
+  shouldShowErrors,
+} from '@ng-forge/dynamic-forms/integration';
 import { HlmRadioComponent, HlmRadioProps } from './hlm-radio.type';
 import { AsyncPipe } from '@angular/common';
 
@@ -33,7 +51,9 @@ import { AsyncPipe } from '@angular/common';
       >
         @for (option of options(); track option.value) {
           <label class="flex items-center gap-x-3" [class.opacity-50]="option.disabled">
-            <hlm-radio [value]="option.value" [disabled]="option.disabled ?? false" />
+            <hlm-radio [value]="option.value" [disabled]="option.disabled ?? false">
+              <hlm-radio-indicator indicator />
+            </hlm-radio>
             <span class="text-sm">{{ option.label | dynamicText | async }}</span>
           </label>
         }
@@ -42,7 +62,9 @@ import { AsyncPipe } from '@angular/common';
       @if (errorsToDisplay()[0]; as error) {
         <p class="text-sm text-destructive" [id]="errorId()">{{ error.message }}</p>
       } @else if (props()?.hint; as hint) {
-        <p class="text-sm text-muted-foreground" [id]="hintId()">{{ hint | dynamicText | async }}</p>
+        <p class="text-sm text-muted-foreground" [id]="hintId()">
+          {{ hint | dynamicText | async }}
+        </p>
       }
     </div>
   `,
